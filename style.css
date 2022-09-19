@@ -1,5 +1,67 @@
-body{
-    background-color: #e4c9fd;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 26px;
+/*
+Folhas de estilo do site Mulheres.Tech 
+*/
+
+/* Reset (redefinindo os padroes de navegador, nesse caso, zera o padrão do navegadpr, pra poder valer o que você quer */
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+html, body {
+    position: relative;
+    margin: 0; /* Margem*/
+    padding: 0; /* Enchimento */
+    height: 100%; /* Altura */
+    width: 100%; /* Largura */
+
+   /* Fonte padrão do site */
+   font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; 
+   /* familia de fonte: Ordem de hierarquia e o final a familia da fonte */
+
+   /* Tamanho da fonte padrão → 1rem */
+   font-size: 16px;
+}
+/* Links */
+a {
+    color: steelblue;
+    text-decoration: none;
+}
+
+/* Pseudo classe "hover" → Passa o mouse sobre */
+a:hover {
+    color: orangered;
+    text-decoration: underline;
+}
+
+/* Elementos semânticos de bloco */
+header, nav, main, article, aside, footer {
+    display: block;
+}
+
+/* Fundo */
+body {
+    background-attachment: fixed;
+    background-color: rgb(175, 0, 175);
+    background-image: url('/img/bg01.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Wrap */
+#wrap {
+    background-color: aqua;
+    
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    /* Limita crescimento do bloco */
+    min-width: 280px;
+    max-width: 1024px;
+
+    /* Centraliza bloco */
+    margin: auto;
+    
 }
