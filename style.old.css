@@ -106,7 +106,7 @@ body {
  * Estilizando o menu principal *
  ********************************/
 
-#wrap>nav {
+#wrap>nav,#wrap>footer {
     background: rgb(66, 0, 66);
     display: flex;
     justify-content: flex-end;
@@ -114,7 +114,7 @@ body {
     border-bottom: 1px solid rgb(66, 0, 66);
 }
 
-#wrap>nav a {
+#wrap>nav a, #wrap>footer {
     display: block;
     color: rgb(255, 244, 255);
     padding: .5rem 1rem;
@@ -135,7 +135,7 @@ body {
     margin-right: auto;
 }
 
-#wrap>nav a:hover {
+#wrap>nav a:hover, #wrap>footer a:hover {
     background-color: rgb(255, 244, 255);
     color: rgb(66, 0, 66);
     text-decoration: none;
@@ -164,4 +164,106 @@ body {
     background-color: rgba(255, 255, 255, 1);
     overflow: auto;
     padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
 }
+#wrap>main article, #wrap>main aside {
+    background-color: white;
+    overflow: auto;
+    margin: 0 .5rem;
+    padding: 0 1rem;
+}
+
+#wrap>main aside {
+    margin: .5rem;
+}
+
+@media screen and (min-width: 768px) {
+    #wrap>main {
+        flex-direction: row;
+    }
+
+    #wrap>main article {
+        flex-grow: 1;
+        margin-bottom: .5rem;
+    }
+
+    #wrap>main aside {
+        margin: 0.5rem .5rem 0 0;
+        min-width: 220px;
+        max-width: 220px;
+        margin-bottom: .5rem;
+        outline-style: dotted;
+    }
+
+
+/* Rodapé */
+    /* design junto com o menu */
+    /* Bloco superior do rodapé */
+
+#fsup {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#fsup a {
+    padding: .5rem;
+    text-align: center;
+    color: rgb(255, 240, 255);
+    text-decoration: none;
+    transition: .25s;
+    font-size: 1.5rem;
+}
+
+
+/* Bloco inferior do rodapé */
+
+#finf {
+    display: flex;
+    padding: .5rem;
+    justify-content: space-between;
+}
+
+#finf h4 {
+    margin: 0 0 .7rem 0;
+    font-weight: normal;
+}
+
+#finf nav a {
+    display: block;
+    padding: .3rem 0;
+    font-size: .9rem;
+    color: rgb(255, 240, 255);
+}
+
+@media screen and (min-width: 426px) {
+
+    #finf {
+        justify-content: space-around;
+    }
+
+}
+
+/*  Com muito conteudo criou uma barra de rolagem no artigo, 
+não gostei e tirei esse fixador de rodapé
+    Sticky Footer
+    Força o rodapé a aparecer sempre na parte inferior da tela,
+    aumentando automaticamente o height de <main>.
+*/
+/* #wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+#wrap>main {
+    flex-grow: 1;
+}
+
+#wrap>main article {
+    flex-grow: 1;
+}
+
+#wrap>span {
+    font-size: 1px;
+} */

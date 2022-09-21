@@ -7,10 +7,27 @@
     https://www.w3schools.com/css/
 */
 
+/*
+    A bilbioteca "Normalize" faz um reset em todos os elementos que tem 
+    apresentação diferente entre os navegadores, principalmente os mais 
+    antigos. Para saber mais, acesse o repo da biblioteca:
+    https://necolas.github.io/normalize.css/
+*/
+@import url('/normalize.css');
+
+/*
+    Importa a fonte "Lato" do Google Fonts.
+    
+    A bilbioteca Google Fonts fornece milhares de fontes de uso livre para 
+    aplicativos. Para saber mais, acesse:
+    https://fonts.google.com/    
+*/
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
 /***************
  * Reset geral *
  ***************/
- * {
+* {
     box-sizing: border-box;
     outline: none;
 }
@@ -23,8 +40,8 @@ html, body {
     height: 100%;
     width: 100%;
 
-    /* Fonte padrão do site */
-    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    /* Fonte padrão do site, usando a fonte "Lato" do Google Fonts */
+    font-family: 'Lato', sans-serif;
 
     /* Tamanho da fonte padrão → 1rem */
     font-size: 16px;
@@ -41,14 +58,8 @@ a {
 
 /* Pseudo classe ":hover" → Ao passar o mouse sobre o elemento */
 a:hover {
-    color:purple;
-    text-decoration:underline;
-    
-}
-
-/* Reset dos elementos semânticos de bloco */
-header, nav, main, article, aside, footer {
-    display: block;
+    color: rgb(255, 69, 0);
+    text-decoration: underline;
 }
 
 /* Fundo da página */
@@ -76,11 +87,10 @@ body {
  *************/
 
 #wrap>header {
-    /* border: 1px solid purple; */
     border-radius: .5rem;
     margin: .5rem;
     background-attachment: fixed;
-    background-color: rgb(128, 0, 128);
+    background-color: purple;
     background-image: url('/img/bg03.jpg');
     background-position: center;
     background-repeat: no-repeat;
@@ -92,23 +102,21 @@ body {
 #wrap>header a {
     display: block;
     font-size: 4rem;
-    color: rgba(82, 0, 82, 0.493);
+    color: rgb(82, 0, 82);
     padding: .5rem 1rem .5rem .5rem;
-
-    /* Experimental → Aplica borda ao texto */
     -webkit-text-stroke: 2px rgb(232, 201, 232);
 }
 
 #wrap>header h1 {
     margin: 0;
-    font-size: 1.45rem;
+    font-size: 1.6rem;
     color: rgb(255, 255, 255);
     text-align: center;
 }
 
 #wrap>header small {
     display: block;
-    font-size: .94rem;
+    font-size: .9rem;
     font-weight: normal;
 }
 
@@ -127,7 +135,7 @@ body {
 }
 
 #wrap>nav a {
-    padding: .5rem .7rem;
+    padding: .7rem;
     text-align: center;
     color: rgb(255, 240, 255);
     text-decoration: none;
@@ -135,7 +143,6 @@ body {
 }
 
 #wrap>nav a:hover {
-    /* background-color: rgb(255, 240, 255); */
     color: rgb(250, 167, 250);
 }
 
@@ -153,6 +160,7 @@ body {
 }
 
 /* Menu principal responsivo */
+
 @media screen and (min-width: 480px) {
 
     #wrap>nav i {
@@ -187,6 +195,8 @@ body {
     margin: .5rem;
 }
 
+/* Conteúdo responsivo */
+
 @media screen and (min-width: 768px) {
     #wrap>main {
         flex-direction: row;
@@ -217,6 +227,8 @@ body {
     color: rgb(255, 240, 255);
 }
 
+/* Bloco superior do rodapé */
+
 #fsup {
     display: flex;
     align-items: center;
@@ -236,6 +248,8 @@ body {
 #fsup a:hover {
     color: rgb(250, 167, 250);
 }
+
+/* Bloco inferior do rodapé */
 
 #finf {
     display: flex;
@@ -260,6 +274,8 @@ body {
     text-decoration: none;
 }
 
+/* Rodapé responsivo */
+
 @media screen and (min-width: 426px) {
 
     #finf {
@@ -268,7 +284,12 @@ body {
 
 }
 
-/* Sticky Footer */
+/* 
+    Sticky Footer
+    Força o rodapé a aparecer sempre na parte inferior da tela,
+    aumentando automaticamente o height de <main>.
+*/
+
 #wrap {
     display: flex;
     flex-direction: column;
